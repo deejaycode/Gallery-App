@@ -104,8 +104,41 @@ var images = (function(){
 	}
 
 
-
-
-
-
 })();
+
+
+var place = (function(){
+
+	var id, info, node;
+
+	id = "board";
+
+	function init(){
+
+		sb.listen({'show-board' : show}, id);
+
+	}
+
+	function show(href){
+
+		info = document.getElementById('placeholder');
+
+		setImage = info.nodeList[0];
+
+		setImage.setAttribute('src', 'href');
+
+		
+	}
+
+	return {
+
+		id: id,
+		init: init,
+		show: show
+
+	}
+
+}())
+
+CORE.addModule(images.id, images);
+CORE.addModule(place.id, place);
